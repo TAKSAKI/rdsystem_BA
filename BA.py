@@ -89,8 +89,8 @@ def calc(a, h, a2, h2, La,c):#状態量を求める
     sh2=(ch*(a+dt/2*sa1))+roh-muh*(h+dt/2*sh1) -Dh * laplacian((h+dt/2*sh1),La)
     sa3=(ca*(a+dt/2*sa2))-(da*(h+dt/2*sh2))+roa-mua*(a+dt/2*sa2) -Da * laplacian((a+dt/2*sa2),La)
     sh3=(ch*(a+dt/2*sa2))+roh-muh*(h+dt/2*sh2) -Dh * laplacian((h+dt/2*sh2),La)
-    sa4=(ca*(a+dt/2*sa3))-(da*(h+dt/2*sh3))+roa-mua*(a+dt/2*sa3) -Da * laplacian((a+dt/2*sa3),La)
-    sh4=(ch*(a+dt/2*sa3))+roh-muh*(h+dt/2*sh3) -Dh * laplacian((h+dt/2*sh3),La)
+    sa4=(ca*(a+dt*sa3))-(da*(h+dt*sh3))+roa-mua*(a+dt*sa3) -Da * laplacian((a+dt*sa3),La)
+    sh4=(ch*(a+dt*sa3))+roh-muh*(h+dt*sh3) -Dh * laplacian((h+dt*sh3),La)
     #sa = ((ca*a)-(da*h)+roa-mua*a -Da * laplacian(a,La))*dt ##反応項と拡散項を計算
     #sh = ((ch*a)+roh-muh*h -Dh * laplacian(h,La))*dt  
     sa=dt/6*(sa1+2*sa2+2*sa3+sa4)
